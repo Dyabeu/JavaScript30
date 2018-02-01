@@ -1,0 +1,34 @@
+body {
+  background-image: url("../image/DrumKitbg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 0;
+  margin: 0;
+  font-size: 10px;
+}
+
+.keys {
+  position: relative;
+  top: 69%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.key {
+  display: flex;
+  align-content: space-around;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 1.2rem;
+  text-align: center;
+  width: 6rem;
+  min-height: 6rem;
+  color: rgba(255, 0, 0, 0.5);
+  border: 0.4rem solid rgba(255, 0, 0, 0.5);
+  transition: all .25 ease;
+}
+
+.sound {
+  text-transform: uppercase;
+}
