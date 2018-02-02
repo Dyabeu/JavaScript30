@@ -25,8 +25,17 @@ body {
   width: 6rem;
   min-height: 6rem;
   color: rgba(255, 0, 0, 0.5);
-  border: 0.4rem solid rgba(255, 0, 0, 0.5);
-  transition: all .25 ease;
+  border: 0.2rem solid rgba(255, 0, 0, 0.5);
+  border-radius: 1rem;
+  box-shadow: 4px 4px 1rem 2px rgba(255, 176, 0, 0.2);
+  transition: all .5s ease;
+}
+
+.key:hover {
+  color: rgba(255, 198, 0, 0.7);
+  border: 0.3rem solid rgba(255, 198, 0, 0.7);
+  box-shadow: -9px -7px 1rem 4px rgba(255, 200, 0, 0.5);
+  transform: translate(0.7rem,0.7rem);
 }
 
 .sound {
