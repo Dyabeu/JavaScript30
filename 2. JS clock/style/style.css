@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url(../images/JSclockDay4.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.clock {
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  width: 300px;
+  height: 300px;
+  border: 10px solid lightgrey;
+  border-radius: 50%;
+  box-shadow:
+  -2px 2px 12px 7px rgba(0,0,0,0.2),
+  inset 0 0 0 3px #EFEFEF,
+  inset -4px 2px 20px 1px black,
+  -3px 6px 10px rgba(0,0,0,0.4);
+}
+
+.clock-face {
+  padding: 10px;
+}
+
+.hand {
+  position: absolute;
+  top: 50%;
+  width: 45%;
+  height: 6px;
+  background-color: black;
+  transform: translateY(-3px);
+
+}
