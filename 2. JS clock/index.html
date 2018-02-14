@@ -43,9 +43,9 @@
 
           function setTime(){
             secondsDegrees += 6;
-            if((secondsDegrees-90)%360 === 0) {
+            if((secondsDegrees-270)%360 === 0) {
               minutesDegrees += 6;
-              if((minutesDegrees-90)%360 === 0) hoursDegrees += 30;
+              if((minutesDegrees-270)%360 === 0) hoursDegrees += 30;
             };
 
             secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
