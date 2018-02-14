@@ -22,10 +22,21 @@ body {
   inset 0 0 0 3px #EFEFEF,
   inset -4px 2px 20px 1px black,
   -3px 6px 10px rgba(0,0,0,0.4);
+  background-image: url(../images/clockFace.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media only screen and (max-width: 700px) {
+  .clock {
+    width: 500px;
+    height: 500px;
+  }
 }
 
 .clock-face {
   padding: 10px;
+
 }
 
 .center {
@@ -34,20 +45,35 @@ body {
   height: 15px;
   border-radius: 100%;
   background-color: rgb(0,0,0);
-  position: absolute;
-  top: 146px;
-  left: 136px;
+  top: 49%;
+  left: 47%;
+  z-index: 1;
 }
 
 .hand {
   position: absolute;
   top: 50%;
-  width: 45%;
+  left: 50%;
   height: 6px;
-  background-color: black;
-  transform: translateY(-3px);
-  transform-origin: 100%;
+  transform-origin: 0% 50%;
   transform: rotate(90deg);
-  transition: transform 0.5s;
+  transition: transform 0.5s, box-shadow 1s;
   transition-timing-function: ease-in;
+  box-shadow: 1px 1px 1px rgb(0,0,0);
+  border-radius: 0 50% 50% 0;
+}
+
+.hour-hand {
+  width: 30%;
+  background-color: rgb(100,0,0);
+}
+
+.min-hand {
+  width: 40%;
+  background-color: rgb(0,100,0);
+}
+
+.second-hand {
+  width: 45%;
+  background-color: rgb(0,0,100);
 }

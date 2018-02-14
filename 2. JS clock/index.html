@@ -20,6 +20,16 @@
         const secondHand = document.querySelector(`.second-hand`);
         const minuteHand = document.querySelector(`.min-hand`);
         const hourHand = document.querySelector(`.hour-hand`);
+        const handsShadowArray = [`-2px 2px 2px 1px rgba(0,0,0,0.5)`, //0
+                                  `0px 3px 2px 1px rgba(0,0,0,0.5)`,  //1
+                                  `4px 2px 2px 1px rgba(0,0,0,0.5)`,  //2
+                                  `4px 0px 2px 1px rgba(0,0,0,0.5)`,  //3
+                                  `3px -3px 2px 1px rgba(0,0,0,0.5)`,  //4
+                                  `-3px -3px 2px 1px rgba(0,0,0,0.5)`,  //5
+                                  `0px -3px 2px 1px rgba(0,0,0,0.5)`,  //6
+                                  `-3px -3px 2px 1px rgba(0,0,0,0.5)`,   //7
+                                  `-3px 0px 2px 1px rgba(0,0,0,0.5)`    //8
+                                  ];
 
         function setBaseTime(){
           const now = new Date(); //set new date in variable now (bunch of numbers)
@@ -27,12 +37,11 @@
           const minutes = now.getMinutes();
           const hours = now.getHours();
 
-          let secondsDegrees = ((seconds/60) * 360) + 90;//342+90;
+          let secondsDegrees = ((seconds/60) * 360) + 90;//135 + 84;
           let minutesDegrees = ((minutes/60) * 360) + 90;//354+90;
           let hoursDegrees = ((hours/12) * 360) + 90;
 
           function setTime(){
-
             secondsDegrees += 6;
             if((secondsDegrees-90)%360 === 0) {
               minutesDegrees += 6;
@@ -42,28 +51,30 @@
             secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
             minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
             hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
-            console.log(now);
-            console.log(seconds);
-            console.log(minutesDegrees);
-            console.log(hoursDegrees);
-            console.log(secondsDegrees);
 
+            setHandShadow(secondHand,secondsDegrees);
+            setHandShadow(minuteHand,minutesDegrees);
+            setHandShadow(hourHand,hoursDegrees);
           };
 
           setInterval(setTime,1000); // repeat function setTime every 1000ms(1s)
           setTime();
-
         };
 
-        function setHandsShadow(element,time){
-          switch (time) {
-            case expression:
+        function setHandShadow(element,degrees){
+          let angle = (degrees-90)%360;
 
-              break;
-            default:
-
-          }
+          if(angle>245 && angle<=315) element.style.boxShadow = handsShadowArray[0];
+          if(angle>315 && angle<=345) element.style.boxShadow = handsShadowArray[1];
+          if(angle>345 && angle<=360) element.style.boxShadow = handsShadowArray[2];
+          if(angle>0 && angle<=40) element.style.boxShadow = handsShadowArray[2];
+          if(angle>45 && angle<=80) element.style.boxShadow = handsShadowArray[3];
+          if(angle>80 && angle<=140) element.style.boxShadow = handsShadowArray[4];
+          if(angle>140 && angle<=160) element.style.boxShadow = handsShadowArray[6];
+          if(angle>160 && angle<=225) element.style.boxShadow = handsShadowArray[7];
+          if(angle>225 && angle<=245) element.style.boxShadow = handsShadowArray[8];
         };
+
         setBaseTime();
       })();
   </script>
