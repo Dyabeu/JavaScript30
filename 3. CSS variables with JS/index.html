@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>3. CSS variables with JS (img perspective)</title>
+    <link rel="stylesheet" href="../3. CSS variables with JS/style/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+  </head>
+  <body>
+    <h1 class="textCenter"> Update CSS Variables with <bold class="highLight">JS</bold> (img perspective)</h1>
+    <div class="controls">
+
+          <div class="label">
+            <label  for="spacing">Spacing:</label>
+          </div>
+          <input class="inputRange" type="range" min="10" max="250" name="spacing" value="10" data-sizing="px"><br>
+
+          <div class="label">
+            <label for="rotate">Rotate:</label>
+          </div>
+          <input type="range" min="0" max="180" name="rotate" value="0" data-sizing="deg"><br>
+
+          <div class="label">
+            <label for="transformOrigin">Transform-origin:</label>
+          </div>
+          <input type="range" min="0" max="100" name="transformOrigin" value="0" data-sizing="%"><br>
+
+          <div class="label">
+            <label for="baseColor">Base color:</label>
+          </div>
+          <input type="color" name="baseColor" value="#ff0000"><br>
+
+    </div>
+
+    <img src="../3. CSS variables with JS/images/perspective.jpg" alt="Wrong path!">
+
+  </body>
+  <script>
+    (function(){
+      const inputsControls = document.querySelectorAll(`.controls input`);
+
+      function changeValue(){
+        const suffix = this.dataset.sizing || ``;
+
+        console.log(this.value);
+        document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+      };
+
+      inputsControls.forEach(input => input.addEventListener(`change`, changeValue));
+      inputsControls.forEach(input => input.addEventListener(`mousemove`, changeValue));
+    })()
+  </script>
+</html>

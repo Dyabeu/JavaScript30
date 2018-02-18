@@ -1,0 +1,39 @@
+:root {
+  --spacing: 10px;
+  --rotate: 0deg;
+  --transformOrigin: 0%;
+  --baseColor: rgba(255, 0, 0, 0.5);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: rgba(255, 255, 255, 0.9);
+  height: 80vh;
+  background: radial-gradient(circle, rgb(34, 117, 220), rgb(16, 20, 47), rgb(6, 6, 8));
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.label {
+  display: inline-block;
+  width: 200px;
+  text-align: right;
+}
+
+img {
+  width: 400px;
+  height: 600px;
+  margin: 50px 200px;
+  padding: var(--spacing);
+  transform: rotate(var(--rotate));
+  transform-origin: 100% var(--transformOrigin);
+  background: var(--baseColor);
+}
+
+.highLight {
+  color: var(--baseColor);
+}
