@@ -14,6 +14,10 @@ body {
   background: radial-gradient(circle, rgb(34, 117, 220), rgb(16, 20, 47), rgb(6, 6, 8));
 }
 
+.controls {
+  z-index: 10;
+}
+
 .textCenter {
   text-align: center;
 }
@@ -30,8 +34,9 @@ img {
   margin: 50px 200px;
   padding: var(--spacing);
   transform: rotate(var(--rotate));
-  transform-origin: 100% var(--transformOrigin);
+  transform-origin: var(--transformOrigin) 50%;
   background: var(--baseColor);
+  z-index: -1;
 }
 
 .highLight {

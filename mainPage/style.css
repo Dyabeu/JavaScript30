@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-image: url('../mainPage/imageMainPage/mainPageBG.jpg');
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+figure {
+  margin: 0px;
+  padding: 5px 0px;
+}
+
+figure, figcaption {
+  text-align: center;
+}
+
+.container {
+  margin:5%;
+  padding: 5% 1%;
+  min-height: 100vh;
+  background-color: rgba(255,255,255,0.8);
+  border: 1px solid silver;
+  border-radius: 20px;
+  box-shadow: 6px 6px 10px 2px rgba(0, 0, 0, 0.5);
+}
+
+.itemList {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.imageContainer {
+  width: 230px;
+  height: 150px;
+}
+
+.imageContainer:hover {
+  transform: scale(1.1);
+  transition: all 0.25s linear;
+}
+
+.imageItem {
+  width: 100%;
+  height: auto;
+  box-shadow: 6px 6px 10px 2px rgba(0, 0, 0, 0.5);
+}
