@@ -15,12 +15,12 @@ body {
   left: 25%;
   width: 300px;
   height: 300px;
-  border: 10px solid lightgrey;
+  border: 10px solid rgb(211,211,211);
   border-radius: 50%;
   box-shadow:
   -2px 2px 12px 7px rgba(0,0,0,0.2),
-  inset 0 0 0 3px #EFEFEF,
-  inset -4px 2px 20px 1px black,
+  inset 0 0 0 3px rgb(239, 239, 239),
+  inset -4px 2px 20px 1px rgb(0,0,0),
   -3px 6px 10px rgba(0,0,0,0.4);
   background-image: url(../images/clockFace.jpg);
   background-repeat: no-repeat;
