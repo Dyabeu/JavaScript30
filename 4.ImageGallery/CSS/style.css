@@ -1,4 +1,44 @@
 body {
   padding: 0;
   margin: 0;
+  font-size: 20px;
 }
+
+.panels {
+  display: flex;
+  overflow: hidden;
+}
+
+.panel {
+  flex: 1;
+  height: 100vh;
+  text-align: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition:
+    transform 1s cubic-bezier(0.55, 0.04, 0.01, 1),
+    font-size 1s cubic-bezier(0.55, 0.04, 0.01, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.panel p {
+  color: rgb(255,255,255);
+  text-transform: uppercase;
+  font-style: italic;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+  font-size: 2em;
+}
+
+.panel p:nth-child(2) {
+  font-size: 4em;
+}
+
+.panel1 { background-image: url('../images/image1.jpg'); }
+.panel2 { background-image: url('../images/image2.jpg'); }
+.panel3 { background-image: url('../images/image3.jpg'); }
+.panel4 { background-image: url('../images/image4.jpg'); }
+.panel5 { background-image: url('../images/image5.jpg'); }
