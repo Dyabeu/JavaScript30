@@ -33,5 +33,27 @@
         <p>Motion</p>
       </div>
     </div>
+
+    <script>
+      (function(){
+        const panels = document.querySelectorAll(`.panel`);
+
+        function panelOpen(){
+          this.classList.add(`disabledbutton`);
+          this.classList.toggle(`panel-open`);
+
+        }
+
+        function activeSideText(e){
+          if(e.propertyName === "flex-grow"){
+            this.classList.toggle('open-active');
+            this.classList.remove(`disabledbutton`);
+          }
+        }
+
+        panels.forEach(panel => panel.addEventListener(`click`, panelOpen));
+        panels.forEach(panel => panel.addEventListener(`transitionend`, activeSideText))
+      })()
+    </script>
   </body>
 </html>

@@ -9,7 +9,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Poppins", sans-serif;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.8);
   height: 80vh;
   background: radial-gradient(circle, rgb(34, 117, 220), rgb(16, 20, 47), rgb(6, 6, 8));
 }
