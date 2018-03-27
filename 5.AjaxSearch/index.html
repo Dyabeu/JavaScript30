@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style/style.css">
+  <title>5.AjaxSearch</title>
+</head>
+
+<body>
+
+  <form class="search-form">
+    <input type="text" class="search" value="" placeholder="City or State">
+    <div class="filters">
+      <label for="place">Filter for a place</label>
+      <input type="checkbox" name="place" checked disabled>
+      <label for="population">Sort alphabeticaly</label>
+      <input type="checkbox" name="population" id="population">
+    </div>
+    <ul class="suggestions">
+    </ul>
+  </form>
+
+  <script type="text/javascript">
+    (function() {
+      const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+
+      const cities = [];
+
+      fetch(endpoint)
+        .then(response => response.json()) // take response and change it into json
+        .then(data => cities.push(...data)); // spread data and push into cities
+
+      function findPLaces(word, cities) {
+
+        return cities.filter(place => {
+          const regexp = new RegExp(word, 'gi'); // g - global i - small or big letters
+          return place.city.match(regexp) || place.state.match(regexp);
+        })
+      }
+
+      function displayPlaces() {
+        let placesFound = findPLaces(search.value, cities);
+        if (populationFilter.checked) {
+          sortPopulation(placesFound)
+        };
+
+        const displayData = placesFound.map(place => {
+          return `
+          <li>
+              <p>${place.city}, ${place.state} </p>
+              <p>${place.population} </p>
+          </li>
+          `;
+        }).join("");
+        suggestions.innerHTML = displayData;
+      }
+
+      function sortPopulation(placesFound) {
+        placesFound = placesFound.sort((a, b) => {
+          return a.city > b.city ? 1 : -1;
+        });
+        return placesFound;
+      }
+
+      const populationFilter = document.querySelector(`#population`);
+      const search = document.querySelector(`.search`);
+      const suggestions = document.querySelector(`.suggestions`);
+      search.addEventListener('change', displayPlaces);
+      search.addEventListener('keyup', displayPlaces);
+      populationFilter.addEventListener('click', displayPlaces);
+    })();
+  </script>
+
+</body>
+
+</html>
